@@ -1,0 +1,28 @@
+{
+  "name": "appreuse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firdousali86/AppReuse.git"
+  },
+  "author": "Firdous Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firdousali86/AppReuse/issues"
+  },
+  "homepage": "https://github.com/firdousali86/AppReuse#readme",
+  "devDependencies": {
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-react": "^7.25.7"
+  },
+  "dependencies": {
+    "@react-native-firebase/auth": "^21.0.0",
+    "@react-native-firebase/firestore": "^21.0.0"
+  }
+}

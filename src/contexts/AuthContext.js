@@ -3,10 +3,16 @@ import auth from "@react-native-firebase/auth";
 import { Alert } from "react-native";
 import firestore from "@react-native-firebase/firestore";
 import { firebase } from "@react-native-firebase/auth";
+import { THE_SECRET } from "@env";
+import { someSecret } from "../config";
 
 export const AuthContext = createContext();
 
 let isWithHeld = false;
+
+console.log("?????????????");
+console.log(someSecret);
+console.log("?????????????");
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);

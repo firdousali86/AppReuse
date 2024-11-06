@@ -1,5 +1,5 @@
-import { THE_SECRET } from "@env";
+// import { THE_SECRET } from "@env";
 
-const someSecret = THE_SECRET;
+// const someSecret = THE_SECRET;
 
-export { someSecret };
+// export { someSecret };

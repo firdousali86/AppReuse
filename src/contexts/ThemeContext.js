@@ -1,9 +1,14 @@
 // utils/ThemeContext.js
 
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import { Appearance } from "react-native";
 
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
+
+export const useTheme = () => {
+  const theme = useContext(ThemeContext);
+  return theme;
+};
 
 export const lightTheme = {
   background: "black",

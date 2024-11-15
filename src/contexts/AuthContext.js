@@ -102,6 +102,7 @@ export const AuthContextProvider = ({ children }) => {
       const userDeviceData = userDeviceDoc.data();
 
       if (
+        true || //skip device check
         userDeviceData.currentUdid === "" ||
         userDeviceData.currentUdid === presentedUdid
       ) {

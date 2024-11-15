@@ -1,7 +1,15 @@
-import React, { createContext, useState, useContext } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 
 // Create a Context
 const ErrorContext = createContext();
+
+let errorHandlerRef = { current: null };
 
 // ErrorProvider Component
 export const ErrorProvider = ({ children }) => {
@@ -17,6 +25,10 @@ export const ErrorProvider = ({ children }) => {
     setError(null);
   };
 
+  useEffect(() => {
+    errorHandlerRef.current = { handleError, clearError };
+  }, [handleError, clearError]);
+
   return (
     <ErrorContext.Provider value={{ error, handleError, clearError }}>
       {children}
@@ -31,3 +43,5 @@ export const useError = () => {
   }
   return context;
 };
+
+export const errorHandler = errorHandlerRef;

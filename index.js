@@ -7,4 +7,8 @@ export { AuthContext, AuthContextProvider } from "./src/contexts/AuthContext";
 
 export { ThemeProvider, useTheme } from "./src/contexts/ThemeContext";
 
-export { ErrorProvider, useError } from "./src/contexts/ErrorContext";
+export {
+  ErrorProvider,
+  useError,
+  errorHandler,
+} from "./src/contexts/ErrorContext";

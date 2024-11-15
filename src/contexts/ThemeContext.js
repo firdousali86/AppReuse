@@ -25,15 +25,17 @@ export const darkTheme = {
   borderColor: "black",
 };
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider = ({ children, darkTheme2, lightTheme2 }) => {
   const colorScheme = Appearance.getColorScheme();
-  const [theme, setTheme] = useState(
-    colorScheme === "dark" ? darkTheme : lightTheme
-  );
+
+  const dt = { ...darkTheme, ...darkTheme2 };
+  const lt = { ...lightTheme, ...lightTheme2 };
+
+  const [theme, setTheme] = useState(colorScheme === "dark" ? dt : lt);
 
   useEffect(() => {
     const subscription = Appearance.addChangeListener(({ colorScheme }) => {
-      setTheme(colorScheme === "dark" ? darkTheme : lightTheme);
+      setTheme(colorScheme === "dark" ? dt : lt);
     });
 
     return () => subscription.remove();
